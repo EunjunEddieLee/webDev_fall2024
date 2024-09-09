@@ -3,10 +3,10 @@
 ![alt 'Egg-Potato Sandwich'](egg_potato_sandwich.jpg)
 
 ## Description
-### **This is the BEST and the EASIEST recipe to make an 'Egg-Potato Sandwich'<br/>You can make this anytime you want!**
+#### This is the BEST and the EASIEST recipe to make an 'Egg-Potato Sandwich'<br/>You can make this anytime you want!
 
 
-### Ingredients
+### **Ingredients**
 
 - a plain bread - 4piece
 - Cheddar cheese - 2piece
@@ -19,7 +19,7 @@
 - Vinegar
 
 
-### Instructions (12 steps)
+### **Instructions (12 steps)**
 
 1. Put water in a pot and boil it first.
 When the water boils, add eggs and a teaspoon of salt and a tablespoon of vinegar.

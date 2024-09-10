@@ -3,7 +3,7 @@
 ![alt 'Egg-Potato Sandwich'](egg_potato_sandwich.jpg)
 
 ## Description
-#### This is the BEST and the EASIEST recipe to make an 'Egg-Potato Sandwich'<br/>You can make this anytime you want!
+#### This is the BEST and the EASIEST recipe to make an 'Egg-Potato Sandwich'<br/>You can make this whenever you want!
 
 
 ### **Ingredients**

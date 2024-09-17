@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Intro CSS</title>
+    <!-- internal style sheet -->
+    <style type="text/css">
+      /* universal selector is commonly used to zero out the browser default margins and padding */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* tag selectors aka type or element selectors apply to every instance of that tag on */
+      div {
+        background-color: fuchsia;
+      }
+
+      p {
+        /* 1rem = 16px */
+        margin-top: 1rem;
+        border: 1px solid red;
+        padding: 2rem 1rem 3rem;
+        border-width: 1px 5px 10px 20px;
+
+        color: #167239;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+        font-weight: 900;
+      }
+      /* a:visited {
+        color: #d14444;
+        text-decoration: none;
+        font-weight: 500;
+      } */
+
+      /* class selectors always start with . inside our style sheet */
+      .silly_text {
+        font-family: cursive;
+        text-decoration: wavy underline;
+        color: cornflowerblue;
+      }
+
+      #really-important {
+        font-weight: bold;
+        font-size: x-large;
+        font-style: oblique;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="silly_text">Testing 123</div>
+    <p>A p tag just to add <a href="#" class="silly_text">some spacing</a> and to talk about margins and padding more...</p>
+    <div>Another div</div>
+
+    <p id="really-important">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultima vacuitate, aegritudines accedit honesta pugnare, laudandis. Securi perpetuis, electram electram acute omnisque scribimus cohaerescent intemperantiam diligi atomus. Lorem sublata legimus ad quadam. Lucilius legat factis, ait repudiandae, <span style="color: purple;">tollitur celeritas nunc</span> nasci necessitatibus esse. Impediente torquatum feugiat captet disputandum fuerit praeter referri. Efficiatur vellem nihil, infantes medeam damna parendum consuevit inpendente. Mortis praebeat poetarum diligenter afferat, desiderabile ruinae bestiae iuberet mandaremus exquisitis. Difficilius chrysippo inquit multam negent.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Semantic Markup</title>
+    <meta
+      name="description"
+      content="Starter template for using semantic HTML elements to organize our code before we begin CSS layouts next week."
+    />
+    <meta name="keywords" content="HTML, Semantic HTML, Tutorial" />
+    <meta name="author" content="NYU" />
+  </head>
+
+  <body>
+    <!-- Here is some starter content. We will mark this up to contain a header, nav, article, section, aside, footer and more! Bonus points if you use even more semantic HTML elements in your HW this week. -->
+    <!-- We will be marking this up as our main menu -->
+    <header>
+      <h1>My Online Store</h1>
+      <!-- Main Navigation -->
+      <nav>
+        Home New Arrivals Accessories Clothing Footwear
+      </nav>
+      <!-- End Main Navigation -->
+    </header>
+
+    <!-- Lets assume we are on a product page for some sort of shoe type -->
+    <!-- Since we are in the shoe section, we might want to help the user choose other shoe types easily with a sidebar -->
+    <!-- Sidebar with seconday navigation -->
+    <aside>
+      <nav>
+        Boots Sandals Flip Flops Flats Heels Sneakers
+        <!-- Subnav for different sneaker types -->
+        <nav>Cross Trainers Running Fashion Slip Ons</nav>
+      </nav>
+      <!-- End Sidebar with seconday navigation -->
+    </aside>
+
+    <!-- Main page content -->
+    <main>
+      <!-- Here is where we would show thumbnail images for all of our running shoes. We are going to use placeholder kittens from https://placekitten.com/. We will reuse the same thumbnail and description 6 times.  -->
+      <!-- Title for our page, remember, we have already used an H1, and we should only have 1 H1 per page! -->
+      <h2>Sneakers</h2>
+      <!-- Individual image, with caption using figure and figcaption -->
+      <figure>
+        <img src="http://placehold.it/300x200" />
+        <!-- This text should be emphasized -->
+        <figcaption>This is a shoe, a fancy shoe.</figcaption>
+        <!-- Price on new line, make this text strong -->
+        <br/>
+        <strong>$70</strong>
+        <!-- A link to the individual product page, again on a new line -->
+        <br/>
+        <a href="#">Shoe #1</a>
+        <!-- End Individual image, with caption using figure and figcaption -->
+      </figure>
+
+      <!-- Copy figure stuff 5 times, make sure it is all contained in the wrapper for our main page content! -->
+      <figure>
+        <img src="http://placehold.it/300x200" />
+        <!-- This text should be emphasized -->
+        <figcaption>This is a shoe, a fancy shoe.</figcaption>
+        <!-- Price on new line, make this text strong -->
+        <br/>
+        <strong>$70</strong>
+        <!-- A link to the individual product page, again on a new line -->
+        <br/>
+        <a href="#">Shoe #2</a>
+        <!-- End Individual image, with caption using figure and figcaption -->
+      </figure>
+      <figure>
+        <img src="http://placehold.it/300x200" />
+        <!-- This text should be emphasized -->
+        <figcaption>This is a shoe, a fancy shoe.</figcaption>
+        <!-- Price on new line, make this text strong -->
+        <br/>
+        <strong>$70</strong>
+        <!-- A link to the individual product page, again on a new line -->
+        <br/>
+        <a href="#">Shoe #3</a>
+        <!-- End Individual image, with caption using figure and figcaption -->
+      </figure>
+      <figure>
+        <img src="http://placehold.it/300x200" />
+        <!-- This text should be emphasized -->
+        <figcaption>This is a shoe, a fancy shoe.</figcaption>
+        <!-- Price on new line, make this text strong -->
+        <br/>
+        <strong>$70</strong>
+        <!-- A link to the individual product page, again on a new line -->
+        <br/>
+        <a href="#">Shoe #4</a>
+        <!-- End Individual image, with caption using figure and figcaption -->
+      </figure>
+      <figure>
+        <img src="http://placehold.it/300x200" />
+        <!-- This text should be emphasized -->
+        <figcaption>This is a shoe, a fancy shoe.</figcaption>
+        <!-- Price on new line, make this text strong -->
+        <br/>
+        <strong>$70</strong>
+        <!-- A link to the individual product page, again on a new line -->
+        <br/>
+        <a href="#">Shoe #5</a>
+        <!-- End Individual image, with caption using figure and figcaption -->
+      </figure>
+      <figure>
+        <img src="http://placehold.it/300x200" />
+        <!-- This text should be emphasized -->
+        <figcaption>This is a shoe, a fancy shoe.</figcaption>
+        <!-- Price on new line, make this text strong -->
+        <br/>
+        <strong>$70</strong>
+        <!-- A link to the individual product page, again on a new line -->
+        <br/>
+        <a href="#">Shoe #6</a>
+        <!-- End Individual image, with caption using figure and figcaption -->
+      </figure>
+      <!-- End Main page content  -->
+    </main>
+
+    <!-- And finally, a footer for our page!  -->
+    <footer>
+      &copy; Shoe Store 2016
+      <!-- social links, We will cover font awesome icons soon -->
+      facebook twitter instagram
+    </footer>
+  </body>
+</html>

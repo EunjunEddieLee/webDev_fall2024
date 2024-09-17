@@ -1,0 +1,1 @@
+When developing web front-end, I realized that it is important to organize the site well from the beginning. Also, it is impossible for developers to be 100% aware of the customer's needs. Therefore, when feedback comes, being able to quickly grasp and flexibly modify it will be an essential ability for web development.

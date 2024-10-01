@@ -1,0 +1,91 @@
+/* ------------ Global Styles ------------ */
+
+* {
+  
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* -------- Flexbox simple row layouts -------- */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* some styles so we can see our containers */
+  border: 1px solid purple;
+  background-color: rgba(255, 0, 255, 0.3);
+  min-height: 400px;
+}
+
+.item {
+  border: 1px solid cornflowerblue;
+  background-color: rgba(0, 0, 255, 0.3);
+  width: 23%;
+  height: 300px; 
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* justify */
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-even {
+  justify-content: space-evenly;
+}
+
+/* align */
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-center {
+  align-items: center;
+}
+
+/* align self */
+.self-start {
+  align-self: flex-start;
+}
+.self-stretch {
+  align-self: stretch;
+}
+.self-end {
+  align-self: flex-end;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .self-stretch {
+    height: 300px;
+    width: auto;
+  }
+}

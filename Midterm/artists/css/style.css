@@ -506,8 +506,8 @@ footer .something {
   }
 
   .album-song {
-    width: 100%;
-    padding: 0 100px;
+    width: 350px;
+    padding: 0 0;
   }
 
   .album-list {
@@ -531,5 +531,17 @@ footer .something {
   }
   .people {
     justify-content: space-between;
+  }
+
+  .album-info {
+    position: absolute;
+    top: 350px;
+    left: 0;
+    right: 0;
+    display: block;
+    opacity: 1;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: all .2s;
   }
 }

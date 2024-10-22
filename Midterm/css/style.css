@@ -261,3 +261,65 @@ main {
   width: 200px;
   height: 200px;
 }
+
+/* Anything smaller than a ipad classic = mobile phone size */
+@media only screen and (max-width: 767px) {
+  
+  .top-nav > a {
+    display: none;
+  }
+  .top-nav .reg-btn {
+    display: none;
+  }
+  .top-nav ul {
+    margin: 0;
+    width: 100%;
+  }
+  .top-nav ul li {
+    width: 25%;
+  }
+
+  .overall .paragraph {
+    width: 100%;
+    margin: 0 80px;
+    text-align: center;
+  }
+  .overall img {
+    display: none;
+  }
+
+  .artists-nav {
+    padding: 0 80px;
+    width: 100%;
+  }
+  .artists-nav nav {
+    width: 100%;
+  }
+  .artists-nav ul {
+    flex-direction: row;
+    /* overflow-x: hidden;
+    overflow-y: auto; */
+    
+    width: 100%;
+    aspect-ratio: 1/1;
+    padding: 0 10px;
+  }
+
+  .artists-nav ul li img {
+    border-radius: 20px;
+    transform: scale(0.9);
+    filter: grayscale(30%);
+    opacity: 1;
+    transition: all .2s;
+  }
+
+  .artists-nav ul li,
+  .artists-nav ul li img,
+  .artists-nav ul li a {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  .artists-nav ul::-webkit-scrollbar {
+    height: 0px;
+  }
+}

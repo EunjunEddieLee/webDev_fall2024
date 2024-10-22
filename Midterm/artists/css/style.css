@@ -246,6 +246,7 @@ main {
   flex-direction: row;
   justify-content: flex-start;
   overflow-x: auto;
+  overflow-y: hidden;
   border-radius: 20px;
   /* white-space: nowrap; */
 }
@@ -470,4 +471,65 @@ footer .something {
   background-color: rgb(47, 9, 117);
   color: white;
   /* height: 200px; */
+}
+
+/* Anything smaller than a ipad classic = mobile phone size */
+@media only screen and (max-width: 767px) {
+  
+  .top-nav > a {
+    display: none;
+  }
+  .top-nav .reg-btn {
+    display: none;
+  }
+  .top-nav ul {
+    margin: 0;
+    width: 100%;
+  }
+  .top-nav ul li {
+    width: 25%;
+  }
+
+  .side-bar {
+    display: none;
+  }
+
+  main, footer {
+    margin: 0;
+    position: relative;
+    align-items: center;
+  }
+
+  .description {
+    width: 100%;
+    padding: 50px 100px;
+  }
+
+  .album-song {
+    width: 100%;
+    padding: 0 100px;
+  }
+
+  .album-list {
+    aspect-ratio: 1/1;
+  }
+  .album-dropdown {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  .album-dropdown img {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  .song-info * {
+    width: 100%;
+  }
+  .song-info {
+    flex-direction: column;
+  }
+  .people {
+    justify-content: space-between;
+  }
 }

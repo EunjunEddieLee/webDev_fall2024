@@ -474,7 +474,7 @@ footer .something {
 }
 
 /* Anything smaller than a ipad classic = mobile phone size */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   
   .top-nav > a {
     display: none;

@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Kalam:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1, h2 {
+  font-family: "Newsreader", serif;
+}
+
+h3, h4 {
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+p {
+  font-family: "Kalam", cursive;
+  font-size: 14pt;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+/* HEADER ------------------------------------------ */
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.top-nav {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(15, 15, 101);
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 0 10px 0 rgba(10, 10, 66, 0.8);
+}
+
+.top-nav > a {
+  margin: 0 30px;
+  height: 50px;
+  background-color: white;
+}
+.top-nav > a img {
+  width: auto;
+  height: 100%;
+}
+
+.top-nav h4 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 13pt;
+}
+.top-nav a:hover > h4 {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.reg-btn {
+  /* height: 70%; */
+  margin: auto 40px auto 0;
+}
+
+.reg-btn a {
+  display: inline-block;
+  background-color: white;
+  width: 140px;
+  height: 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  padding: 0;
+  margin: 0 40px;
+  list-style-type: none;
+}
+
+.top-nav ul li {
+  width: 100px;
+  height: 100%;
+  transition: all 0.2s;
+}
+
+.top-nav ul li:hover {
+  background-color: rgb(52, 52, 147);
+}
+
+.top-nav ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+}
+
+/* MAIN ------------------------------------------ */
+main {
+  /* height: 1000px; */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-image: url('../img/home_background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.overall {
+  margin-top: 120px;
+  display: flex;
+  height: 400px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('../img/overall_background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.overall .paragraph {
+  width: 500px;
+}
+
+.overall img {
+  width: 200px;
+  height: auto;
+  margin: 30px 0 30px 40px;
+  /* background-color: rgb(255, 189, 253); */
+  transform: rotate(-15deg);
+  transition: all .4s ease-in-out;
+}
+.overall img:hover {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.artists-nav {
+  margin: 100px 0;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.artists-nav .word-deco {
+  position: relative;
+  width: 30%;
+  height: 90px;
+}
+
+.word-deco h2 {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 251, 179);
+}
+
+.word-deco img {
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: auto;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, .1); */
+}
+
+.artists-nav ul {
+  padding: 0;
+  margin-top: 30px;
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow-x: auto;
+  list-style-type: none;
+
+  border-top: 2px solid rgb(255, 247, 135);
+  border-bottom: 2px solid rgb(255, 247, 135);
+
+}
+
+/* Horizontal scrollbar design ----------- */
+.artists-nav ul::-webkit-scrollbar {
+  height: 8px;
+}
+.artists-nav ul::-webkit-scrollbar-track {
+  background-color: rgba(47, 28, 191, .4);
+  border-radius: 10px;
+}
+.artists-nav ul::-webkit-scrollbar-thumb {
+  background-color: rgba(113, 94, 255, .4);
+  border-radius: 10px;
+}
+
+.artists-nav ul li {
+  margin: 15px 5px;
+  font-size: 0;
+}
+.artists-nav ul:hover img {
+  filter: grayscale(30%);
+  opacity: .8;
+  transform: scale(0.9);
+}
+.artists-nav ul li img {
+  border-radius: 20px;
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: all .2s;
+}
+.artists-nav ul li img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.artists-nav ul li a {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}

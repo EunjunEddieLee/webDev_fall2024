@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funny Cats!</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="text/javascript">
+    var votes = [0, 0, 0, 0, 0]
+    const cats = ['Orange', 'Mackerel', 'Tricolor', 'Ragdoll', 'Siamese']
+    
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // this is where you assign html elements to js variables
+      // this is also where you add event listeners
+      // and any other code you want to fire off the second the page has fully loaded
+      const cat_btns = document.getElementsByClassName('cat-btn');
+      for(let i=0; i<cat_btns.length; i++){
+        var cat_btn = cat_btns.item(i);
+        cat_btn.addEventListener('click', (event) => {
+          updateVotes(event, i);
+        });
+      }
+    })
+
+    function updateVotes(event, idx) {
+      // alert('button ' + idx + ' is clicked')
+      // const index = Array.from(element.parentNode.children).indexOf(element)
+      votes[idx]++;
+      const stats = document.getElementById('cat-vote-statistics')
+      let stats_string = '';
+      for(let i=0; i < cats.length; i++) {
+        stats_string += `${cats[i]}: ${votes[i]}` + '\n';
+      }
+      const text = document.createTextNode(stats_string)
+      stats.innerHTML = stats_string
+
+      var total_votes = 0;
+      var maxCat = 0;
+      var maxCatName = '';
+      for(let i=0; i<cats.length; i++){
+        total_votes += votes[i]
+        if(votes[i] > votes[maxCat]) {
+          maxCat = i;
+        }
+      }
+      const result = document.getElementById('result');
+      switch(maxCat) {
+        case 0:
+          maxCatName = 'Orange';
+          break;
+        case 1:
+          maxCatName = 'Mackerel';
+          break;
+        case 2:
+          maxCatName = 'Tricolor';
+          break;
+        case 3:
+          maxCatName = 'Ragdoll';
+          break;
+        case 4:
+          maxCatName = 'Siamese';
+          break;
+      }
+      let result_string = 
+      `The Most Cute Cat is ${maxCatName}!!
+      Total number of votes is ${total_votes}`;
+      result.innerHTML = result_string;
+    }
+
+  </script>
+</head>
+<body>
+  <h1>CATS!!!</h1>
+  <ul id="cats">
+    <li>
+      <img src="img/orange_loaf.jpg">
+      <button class="cat-btn">Orange!!</button>
+    </li>
+    <li>
+      <img src="img/mackerel.jpg">
+      <button class="cat-btn">Mackerel!!</button>
+    </li>
+    <li>
+      <img src="img/tricolor.jpg">
+      <button class="cat-btn">Tricolor!!</button>
+    </li>
+    <li>
+      <img src="img/ragdoll.jpg">
+      <button class="cat-btn">Ragdoll!!</button>
+    </li>
+    <li>
+      <img src="img/siamese.jpg">
+      <button class="cat-btn">Siamese!!</button>
+    </li>
+  </ul>
+
+  <p id="cat-vote-statistics">Statistics</p>
+  <br>
+  <p id="result">Result</p>
+
+</body>
+</html>

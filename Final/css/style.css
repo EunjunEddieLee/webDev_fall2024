@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* ----------------------------- */
+
+h1 {
+  text-align: center;
+  margin: 40px 50px;
+}
+
+
+#cats {
+  margin: 20px 50px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  list-style-type: none;
+}
+
+#cats li {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#cats img {
+  height: 180px;
+  width: auto;
+}
+
+#cats button {
+  margin: 10px 0 0;
+}
+
+#cat-vote-statistics {
+  text-align: center;
+  font-size: larger;
+
+}
+
+#result {
+  text-align: center;
+  font-size: larger;
+
+}

@@ -3,108 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Funny Cats!</title>
+  <title>😺CAT WORLD😺</title>
   <link rel="stylesheet" href="css/style.css" />
-  <script type="text/javascript">
-    var votes = [0, 0, 0, 0, 0]
-    const cats = ['Orange', 'Mackerel', 'Tricolor', 'Ragdoll', 'Siamese']
-    
 
-    document.addEventListener('DOMContentLoaded', function () {
-      // this is where you assign html elements to js variables
-      // this is also where you add event listeners
-      // and any other code you want to fire off the second the page has fully loaded
-      const cat_btns = document.getElementsByClassName('cat-btn');
-      for(let i=0; i<cat_btns.length; i++){
-        var cat_btn = cat_btns.item(i);
-        cat_btn.addEventListener('click', (event) => {
-          updateVotes(event, i);
-        });
-      }
-    })
-
-    function updateVotes(event, idx) {
-      // alert('button ' + idx + ' is clicked')
-      // const index = Array.from(element.parentNode.children).indexOf(element)
-      votes[idx]++;
-      const stats = document.getElementById('cat-vote-statistics')
-      let stats_string = '';
-      for(let i=0; i < cats.length; i++) {
-        stats_string += `${cats[i]}: ${votes[i]}` + '\n';
-      }
-      const text = document.createTextNode(stats_string)
-      stats.innerHTML = stats_string
-
-      var total_votes = 0;
-      var maxCat = 0;
-      var maxCatName = '';
-      for(let i=0; i<cats.length; i++){
-        total_votes += votes[i]
-        if(votes[i] > votes[maxCat]) {
-          maxCat = i;
-        }
-      }
-      const result = document.getElementById('result');
-      switch(maxCat) {
-        case 0:
-          maxCatName = 'Orange';
-          break;
-        case 1:
-          maxCatName = 'Mackerel';
-          break;
-        case 2:
-          maxCatName = 'Tricolor';
-          break;
-        case 3:
-          maxCatName = 'Ragdoll';
-          break;
-        case 4:
-          maxCatName = 'Siamese';
-          break;
-      }
-      let result_string = 
-      `The Most Cute Cat is ${maxCatName}!!
-      Total number of votes is ${total_votes}`;
-      result.innerHTML = result_string;
-    }
-
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Rubik Doodle Shadow -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Delius&family=Gowun+Dodum&family=Kalam:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Quicksand:wght@300..700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+  <!-- Comic Neue -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Serif+Text:ital@0;1&family=Delius&family=Gowun+Dodum&family=Kalam:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Quicksand:wght@300..700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
-    <h1>CATS!!!</h1>
-    <ul id="cats">
-      <li>
-        <img src="img/orange_loaf.jpg">
-        <button class="cat-btn">Orange!!</button>
-      </li>
-      <li>
-        <img src="img/mackerel.jpg">
-        <button class="cat-btn">Mackerel!!</button>
-      </li>
-      <li>
-        <img src="img/tricolor.jpg">
-        <button class="cat-btn">Tricolor!!</button>
-      </li>
-      <li>
-        <img src="img/ragdoll.jpg">
-        <button class="cat-btn">Ragdoll!!</button>
-      </li>
-      <li>
-        <img src="img/siamese.jpg">
-        <button class="cat-btn">Siamese!!</button>
-      </li>
-    </ul>
-  
-    <h3>Statistics</h3>
-    <div id="cat-vote-statistics">Orange: 0
-      Mackerel: 0
-      Tricolor: 0
-      Ragdoll: 0
-      Siamese: 0</div>
-    <br/>
-    <div id="result">Which is The Most Cute Cat?</div>
+    <h1 class="center-text rubik-doodle-shadow-regular">CAT WORLD</h1>
+    <button 
+      class="floating-button comic-neue-regular btn btn-fill-bottom btn-fill-bottom--black"
+      id="btn1"
+      onclick="location.href='cats.html'">Cats</button>
+    <button 
+      class="floating-button comic-neue-regular btn btn-fill-bottom btn-fill-bottom--black" 
+      id="btn2"
+      onclick="location.href='memes.html'">Memes</button>
+    <button 
+      class="floating-button comic-neue-regular btn btn-fill-bottom btn-fill-bottom--black" 
+      id="btn3"
+      onclick="location.href='cat_name_generator.html'">Cat Name<br>Generator</button>
+    <button 
+      class="floating-button comic-neue-regular btn btn-fill-bottom btn-fill-bottom--black" 
+      id="btn4"
+      onclick="location.href='idioms.html'">Idioms</button>
+    <button 
+      class="floating-button comic-neue-regular btn btn-fill-bottom btn-fill-bottom--black" 
+      id="btn5"
+      onclick="location.href='playroom.html'">Playroom</button>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script type="text/javascript">
+    // Center H1 text animation (optional, if you want it animated)
+    gsap.fromTo(
+      ".center-text",
+      { opacity: 0},
+      { opacity: 1, duration: 1, rotation: 360, ease: "power2.out" }
+    );
+
+    // Buttons floating animation
+    const buttons = ["#btn1", "#btn2", "#btn3", "#btn4", "#btn5"];
+    const ellipse_a = window.innerWidth*0.3; // Orbit radius
+    const ellipse_b = window.innerHeight*0.3; // Orbit radius
+    
+    buttons.forEach((selector, index) => {
+      // var tl = gsap.timeline({repeat: 0})
+      var angle = (index * (360 / buttons.length)) * (Math.PI / 180); // Spread buttons evenly
+      gsap.to(selector, {
+          duration: 1, // Orbit duration
+          x: `-=${ellipse_a * Math.sin(angle)}`,
+          y: `-=${ellipse_b * Math.cos(angle)}`,
+          repeat: 0,
+          ease: "none",
+        });
+      var tl = gsap.timeline({repeat: -1, delay: 1 + Math.random()})
+      tl.to(selector, {
+          duration: 0.8,
+          y: `-=25`,
+          ease: Sine.easeInOut
+        })
+        .to(selector, {
+          duration: 0.8,
+          y: `+=25`,
+          ease: Sine.easeInOut
+        })
+    });
+  </script>
 </body>
 </html>

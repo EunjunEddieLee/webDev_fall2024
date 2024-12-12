@@ -1,5 +1,4 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Delius&family=Gowun+Dodum&family=Kalam:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Quicksand:wght@300..700&family=Rubik+Doodle+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Serif+Text:ital@0;1&family=Delius&family=Gowun+Dodum&family=Kalam:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Quicksand:wght@300..700&family=Rubik+Doodle+Shadow&display=swap');
 
 .rubik-doodle-shadow-regular {
@@ -77,13 +76,121 @@ main {
 
 }
 
-/* ----------------------------- */
+/* HEADER ------------------------------------------ */
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.top-nav {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(15, 15, 101);
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 0 10px 0 rgba(10, 10, 66, 0.8);
+}
+
+.top-nav > a {
+  margin: 0 30px;
+  height: 50px;
+  background-color: white;
+}
+.top-nav > a img {
+  width: auto;
+  height: 100%;
+}
+
+.top-nav h4 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 13pt;
+}
+.top-nav a:hover > h4 {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.reg-btn {
+  /* height: 70%; */
+  margin: auto 40px auto 0;
+}
+
+.reg-btn a {
+  display: inline-block;
+  background-color: white;
+  width: 140px;
+  height: 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  padding: 0;
+  margin: 0 40px;
+  list-style-type: none;
+}
+
+.top-nav ul li {
+  width: 100px;
+  height: 100%;
+  transition: all 0.2s;
+}
+
+.top-nav ul li:hover {
+  background-color: rgb(52, 52, 147);
+}
+
+.top-nav ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+}
+
+/* MAIN ----------------------------- */
 main {
   /* position: relative; */
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+
+.bouncy-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .bouncy-text:hover .char {
+  transform: translateY(-30px);
+  transition-delay: calc(0.05s * var(--index));
+} */
+
+.bouncy-text .char {
+  margin: 0 4px;
+  /* transition: transform 0.3s ease-in-out; */
 }
 
 .center-text {

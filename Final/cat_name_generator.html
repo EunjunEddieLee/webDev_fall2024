@@ -1,11 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cat Name Generator</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Rubik Doodle Shadow & Comic Neue -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Serif+Text:ital@0;1&family=Delius&family=Gowun+Dodum&family=Kalam:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Quicksand:wght@300..700&family=Rubik+Doodle+Shadow&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Serif+Text:ital@0;1&family=Delius&family=Gowun+Dodum&family=Kalam:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Quicksand:wght@300..700&family=Rubik+Doodle+Shadow&display=swap');
+
+    * {
+      font-family: 'Delius', sans-serif;
+    }
+
+    header * {
+      font-family: 'Rubik Doodle Shadow', sans-serif;
+    }
+
+    html {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    body {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* HEADER ------------------------------------------ */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .top-nav {
+      width: 100%;
+      height: 70px;
+      background-color: rgba(45, 45, 45, 0.5);
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      box-shadow: 0 0 10px 0 rgba(45, 45, 45, 0.8);
+    }
+
+    .top-nav>a {
+      margin: 0 30px;
+      height: 50px;
+      background-color: white;
+    }
+
+    .top-nav>a img {
+      width: auto;
+      height: 100%;
+    }
+
+    .top-nav h4 {
+      margin: 0;
+      font-weight: normal;
+      font-size: 18pt;
+    }
+
+    .top-nav a:hover>h4 {
+      font-weight: bold;
+      font-size: 20pt;
+    }
+
+    .top-nav ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
+      align-items: center;
+      padding: 0;
+      margin: 0 40px;
+      list-style-type: none;
+    }
+
+    .top-nav ul li {
+      width: 200px;
+      height: 100%;
+      transition: all 0.5s;
+    }
+
+    .top-nav ul li:hover {
+      background-color: rgba(29, 29, 29, .8);
+    }
+
+    .top-nav ul li a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: white;
+    }
+
+    /* MAIN --------------- */
+    body {
+      position: relative;
+    }
+
+    #background-nyan {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -10;
+      overflow-y: hidden;
+      opacity: 0;
+    }
+
+    #background-nyan h2 {
+      font-size: 100px;
+    }
+
+    body {
+      /* font-family: Arial, sans-serif; */
+      background-color: #f1e20d;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fdffa4;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container>* {
+      margin: 20px 0;
+    }
+
+    .container h1 {
+      color: #333;
+      font-size: 36px;
+    }
+
+    .container p {
+      font-size: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      /* padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s; */
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 2em;
+      color: #555;
+    }
+
+    /* Button */
+    .btn {
+      /* font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase; */
+    }
+
+    .btn:hover .btn-slide-show-text1 {
+      margin-left: 65px;
+    }
+
+    .btn-moving-gradient {
+      height: 55px;
+      width: 200px;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      border: none;
+      background-size: 300% 100%;
+      border-radius: 50px;
+    }
+
+    .btn-moving-gradient:hover {
+      transition: 0.5s ease-in-out;
+      background-position: 100% 0px;
+    }
+
+    .btn-moving-gradient--green {
+      background-image: linear-gradient(90deg, rgb(52, 160, 218), rgb(130, 230, 237), rgb(108, 241, 251), rgb(24, 190, 255));
+      box-shadow: rgb(130, 230, 237) 0px 4px 15px 0px;
+    }
+  </style>
 </head>
+
 <body>
-  
+  <header>
+    <!-- Top Nav Bar -->
+    <nav class="top-nav">
+      <ul>
+        <li class="nav-menu"><a href="./index.html">
+            <h4>Home</h4>
+          </a></li>
+        <li class="nav-menu"><a href="#">
+            <h4>About</h4>
+          </a></li>
+        <li class="nav-menu"><a href="#">
+            <h4>News</h4>
+          </a></li>
+        <li class="nav-menu"><a href="#">
+            <h4>Posts</h4>
+          </a></li>
+      </ul>
+      <!-- <div class="reg-btn"><a href="#"><h4>Register</h4></a></div> -->
+    </nav>
+  </header>
+
+  <div id="background-nyan">
+    <h2>
+      😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺
+      😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺
+      😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺
+      😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺
+      😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺
+      😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺
+      😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺
+      😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺 😺
+    </h2>
+  </div>
+
+  <main>
+    <div class="container">
+      <h1 style="font-family: 'Rubik Doodle Shadow'; font-weight: bold;">Cat <span
+          style="font-family: 'Rubik Doodle Shadow'; font-weight: bold;">Name</span> Generator</h1>
+      <p>Type your first/last name below and get your cat-ified version!</p>
+      <input type="text" id="nameInput" placeholder="Enter your name">
+      <button class="btn btn-moving-gradient btn-moving-gradient--green" onclick="generateCatName()">Generate</button>
+      <div class="result" id="result">What name will it be?</div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script type="text/javascript">
+    function generateCatName() {
+      const bg_nyan = document.getElementById('background-nyan');
+      gsap.to(bg_nyan, {
+        duration: 0.5,
+        opacity: 1
+      })
+      gsap.to(bg_nyan, {
+        duration: 0.5,
+        opacity: 0,
+        delay: 0.5
+      })
+
+      var tl = gsap.timeline({ repeat: 3, delay: 0 })
+      tl.to(bg_nyan, {
+        duration: 0.2,
+        x: 20,
+        ease: 'power1.out'
+      })
+        .to(bg_nyan, {
+          duration: 0.2,
+          x: -20,
+          ease: 'power1.out'
+        })
+
+      const nameInput = document.getElementById('nameInput').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      // Generate the cat version of the name
+      var catName;
+      if (!nameInput) {
+        catName = 'Please enter a name!';
+      }
+      else {
+        catName = `😺${nameInput}nyan😺`.replace(/\s/g, ' Meow ');
+      }
+
+      // Display the result with GSAP animation
+      resultDiv.textContent = catName;
+      gsap.fromTo(resultDiv,
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: 'bounce.out' }
+      );
+    }
+  </script>
 </body>
+
 </html>

@@ -21,11 +21,6 @@
     crossorigin="anonymous"></script>
 
   <style type="text/css">
-    /* Cursor */
-    * {
-      cursor: url('./img/playroom/cursor_hand_50px.png') 2 2, auto;
-    }
-
     /* Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Serif+Text:ital@0;1&family=Delius&family=Gowun+Dodum&family=Kalam:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Quicksand:wght@300..700&family=Rubik+Doodle+Shadow&display=swap');
 
@@ -40,13 +35,15 @@
     html {
       height: 100vh;
       overflow: hidden;
-      
+      cursor: url(./img/playroom/cursor_hand_50px.png), auto;
     }
 
     body {
+      width: 100%;
       height: 100%;
       position: relative;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: #c08552;
@@ -67,46 +64,64 @@
       width: 100%;
     }
     .home-btn:hover {
-      cursor: url('./img/playroom/cursor_normal_50px.png');
       transform: scale(1.2);
+    }
+    .home-btn img:hover {
+      cursor: url(./img/playroom/cursor_normal_50px.png), auto;
+    }
+    .home-btn img:active {
+      cursor: url(./img/playroom/cursor_click_50px.png), auto;
     }
 
 
     /* Playable things */
     .container {
       position: relative;
-      width: 90vw;
-      height: 90vh;
-      max-width: 90vh;
-      max-height: 90vw;
-      border-radius: 9px;
-      background-color: white;
+      width: 60vw;
+      height: 70vh;
+      max-width: 60vw;
+      max-height: 70vh;
+      border-radius: 50px;
+      padding: 50px;
+      background-color: #f3e9dc;
+
+      border: solid 10px #5e3023;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .toy {
-      cursor: url('./img/playroom/cursor_normal_50px.png') 2 2, auto;
-      width: 100px;
-      height: 100px;
-      max-height: 15vh;
-      max-width: 15vh;
-    }
-    .toy:active {
-      cursor: url('./img/playroom/cursor_click_50px.png') 2 2, auto;
-    }
-
-    .toy-pinwheel {
-      background-image:url('./img/playroom/pinwheel.png') 50 50;
+    .pinwheel {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-image: url('./img/playroom/pinwheel.png');
       background-size: contain;
       background-repeat: no-repeat;
     }
-
-    .flair--3b {
-      background-image:url(https://assets.codepen.io/16327/ui-flair-2.png);
+    .pinwheel:hover {
+      cursor: url('./img/playroom/cursor_normal_50px.png') 2 2, auto !important;
+    }
+    .pinwheel:active {
+      cursor: url('./img/playroom/cursor_click_50px.png') 2 2, auto !important;
     }
 
-    .flair--4b {
-      background-image:url(https://assets.codepen.io/16327/ui-flair-4.png);
+    .ball {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-image: url('./img/playroom/ball.png');
+      background-size: contain;
+      background-repeat: no-repeat;
     }
+    .ball:hover {
+      cursor: url('./img/playroom/cursor_normal_50px.png') 2 2, auto !important;
+    }
+    .ball:active {
+      cursor: url('./img/playroom/cursor_click_50px.png') 2 2, auto !important;
+    }
+
   </style>
 </head>
 <body>
@@ -114,16 +129,11 @@
     <a href="./index.html"><img src="./img/playroom/arrow.png" alt="back_to_home"/></a>
   </div>
   
+  <div class="title"><h1 style="font-family: Rubik Doodle Shadow; color: #f3e9dc; font-size: 50px; margin-bottom: 20px;">Play Room</h1></div>
+
   <div class="container">
-    <div class="wrapper">
-      <div class="toy"></div>
-    </div>
-    <div class="wrapper">
-      <div class="toy toy-pinwheel"></div>
-    </div>
-    <div class="wrapper">
-      <div class="toy toy--4b"></div>
-    </div>
+    <div class="pinwheel"></div>
+    <div class="ball"></div>
   </div>
 
 
@@ -131,22 +141,37 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', () => {
+
+      const pinwheel = document.getElementsByClassName('pinwheel')[0]
+      const ball = document.getElementsByClassName('ball')[0]
+      gsap.to(pinwheel, {
+        duration: 1,
+        x: (Math.random()*2 - 1)*innerWidth*0.2,
+        y: (Math.random()*2 - 1)*innerHeight*0.3,
+        rotation: Math.random()*720 - 360
+      })
+      gsap.to(ball, {
+        duration: 1,
+        x: (Math.random()*2 - 1)*innerWidth*0.2,
+        y: (Math.random()*2 - 1)*innerHeight*0.3,
+        rotation: Math.random() >= 0.5 ? 360 : -360
+      })
+
       gsap.registerPlugin(Draggable);
-            
-      Draggable.create(".toy--1", {
-        type: "x",
-        bounds: ".container"
-      });
 
-      Draggable.create(".toy-pinwheel", {
+      Draggable.create(".pinwheel", {
         type: "rotation",
-        inertia: true
+        inertia: true, // Enable smooth inertia after release
+        allowEventDefault: true
       });
 
-      Draggable.create(".toy--4b", {
+      Draggable.create(".ball", {
+        // type: "rotation",
         bounds: ".container",
-        inertia: true
+        inertia: true, // Enable smooth inertia after release
+        allowEventDefault: true
       });
+      
     })
   </script>
 </body>

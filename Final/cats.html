@@ -187,6 +187,29 @@
       border-radius: 30px;
       background-color: rgba(92, 41, 0, 0.5);
     }
+
+    /* Anything smaller than a ipad classic = mobile phone size */
+    @media only screen and (max-width: 768px) {
+      .top-nav > a {
+        display: none;
+      }
+      .top-nav ul {
+        margin: 0;
+        width: 100%;
+      }
+      .top-nav ul li {
+        width: 25%;
+      }
+
+      .carousel-item img {
+        position: absolute;
+        top: 25%;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        border: solid #54372a 20px;
+      }
+    }
   </style>
 
   <title>Cats</title>

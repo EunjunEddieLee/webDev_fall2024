@@ -120,16 +120,42 @@
     main {
       width: 60%;
       height: 75%;
-      background-color: #e3ebf2;
+      background-color: #c79a99;
       overflow-y: auto;
-    }
-
-    .accordion-item {
-      background-color: #e3ebf2;
+      border-radius: 20px;
+      border: solid #272030 5px;
     }
 
     .accordion {
       width: 100%;
+    }
+    .accordion-item {
+      border-radius: 30px;
+      border: solid #272030 2px;
+    }
+    .accordion-button {
+      font-weight: bold;
+      background-color: #c79a99;
+      margin: 0;
+    }
+    .accordion-body {
+      background-color: #ffe2e2;
+    }
+
+    /* Anything smaller than a ipad classic = mobile phone size */
+    @media only screen and (max-width: 768px) {
+      
+      .top-nav > a {
+        display: none;
+      }
+      .top-nav ul {
+        margin: 0;
+        width: 100%;
+      }
+      .top-nav ul li {
+        width: 25%;
+      }
+
     }
 
   </style>
@@ -154,110 +180,140 @@
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-            Cat Idiom #1
+            Let the cat out of the bag
           </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+          <div class="accordion-body">
+            Meaning: To reveal a secret.<br>
+            Explanation: Originates from market fraud where a cat was put in a bag instead of a pig.
+          </div>
         </div>
       </div>
       <!-- 2 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-            Cat Idiom #2
+            Curiosity killed the cat
           </button>
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          <div class="accordion-body">
+            Meaning: Excessive curiosity can lead to trouble.<br>
+            Explanation: A cautionary reminder about the dangers of being overly curious.
+          </div>
         </div>
       </div>
       <!-- 3 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-            Cat Idiom #3
+            The cat’s out of the bag
           </button>
         </h2>
         <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          <div class="accordion-body">
+            Meaning: A secret has been revealed.<br>
+            Explanation: Refers to a situation where something can no longer be hidden.
+          </div>
         </div>
       </div>
       <!-- 4 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-            Cat Idiom #4
+            Like a cat on a hot tin roof
           </button>
         </h2>
         <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          <div class="accordion-body">
+            Meaning: Nervous or jumpy.<br>
+            Explanation: Describes someone who is anxious or uncomfortable.
+          </div>
         </div>
       </div>
       <!-- 5 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-            Cat Idiom #5
+            Cat got your tongue?
           </button>
         </h2>
         <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          <div class="accordion-body">
+            Meaning: Why aren’t you speaking?<br>
+            Explanation: Used when someone is unusually quiet or at a loss for words.
+          </div>
         </div>
       </div>
       <!-- 6 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-            Cat Idiom #6
+            When the cat’s away, the mice will play
           </button>
         </h2>
         <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          <div class="accordion-body">
+            Meaning: People will take advantage of someone's absence to behave freely.<br>
+            Explanation: Without authority figures, people act more relaxed or mischievously.
+          </div>
         </div>
       </div>
       <!-- 7 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-            Cat Idiom #7
+            Look what the cat dragged in
           </button>
         </h2>
         <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          <div class="accordion-body">
+            Meaning: A humorous or sarcastic way to greet someone who looks messy or unexpected.<br>
+            Explanation: Refers to how cats often bring home random (sometimes undesirable) things.
+          </div>
         </div>
       </div>
       <!-- 8 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
-            Cat Idiom #8
+            Fight like cats and dogs
           </button>
         </h2>
         <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          <div class="accordion-body">
+            Meaning: To argue or fight fiercely.<br>
+            Explanation: Based on the stereotypical enmity between cats and dogs.
+          </div>
         </div>
       </div>
       <!-- 9 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
-            Cat Idiom #9
+            There’s more than one way to skin a cat
           </button>
         </h2>
         <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          <div class="accordion-body">
+            Meaning: There’s more than one way to achieve a goal.<br>
+            Explanation: Suggests that problems can be solved in various ways.
+          </div>
         </div>
       </div>
       <!-- 10 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
-            Cat Idiom #10
+            A cat nap
           </button>
         </h2>
         <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          <div class="accordion-body">
+            Meaning: A short and light sleep.<br>
+            Explanation: Inspired by how cats often take quick naps throughout the day.
+          </div>
         </div>
       </div>
     </div>

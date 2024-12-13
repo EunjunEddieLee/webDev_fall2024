@@ -78,35 +78,72 @@
         })
       })
       
-
       // Buttons appearing, floating animation
       const buttons = ["#btn1", "#btn2", "#btn3", "#btn4", "#btn5"];
-      const ellipse_a = window.innerWidth*0.3; // Orbit radius
-      const ellipse_b = window.innerHeight*0.3; // Orbit radius
-      
-      buttons.forEach((selector, index) => {
-        //appearing
-        var angle = (index * (360 / buttons.length)) * (Math.PI / 180); // Spread buttons evenly
-        gsap.to(selector, {
-            duration: 1,
-            x: `-=${ellipse_a * Math.sin(angle)}`,
-            y: `-=${ellipse_b * Math.cos(angle)}`,
-            repeat: 0,
-            ease: "none",
+
+      //media query
+      const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+      function handleMediaQueryChange(e) {
+        if (e.matches) {
+          //mobile
+          buttons.forEach((selector, index) => {
+            //appearing
+            var dist = (index-2) * innerHeight*0.18; // Spread buttons evenly
+            gsap.to(selector, {
+                duration: 1,
+                y: `+=${dist}`,
+                repeat: 0,
+                ease: "none",
+              });
+            //floating
+            var tl = gsap.timeline({repeat: -1, delay: 1})
+            tl.to(selector, {
+                duration:  0.8 + Math.random()*0.4,
+                x: `-=${innerWidth*0.1}`,
+                ease: Sine.easeInOut
+              })
+              .to(selector, {
+                duration: 0.8 + Math.random()*0.4,
+                x: `+=${innerWidth*0.1}`,
+                ease: Sine.easeInOut
+              })
           });
-        //floating
-        var tl = gsap.timeline({repeat: -1, delay: 1})
-        tl.to(selector, {
-            duration:  0.8 + Math.random()*0.4,
-            y: `-=25`,
-            ease: Sine.easeInOut
-          })
-          .to(selector, {
-            duration: 0.8 + Math.random()*0.4,
-            y: `+=25`,
-            ease: Sine.easeInOut
-          })
-      });
+        }
+        else {
+          const ellipse_a = window.innerWidth*0.3; // Orbit radius
+          const ellipse_b = window.innerHeight*0.3; // Orbit radius
+          
+          buttons.forEach((selector, index) => {
+            //appearing
+            var angle = (index * (360 / buttons.length)) * (Math.PI / 180); // Spread buttons evenly
+            gsap.to(selector, {
+                duration: 1,
+                x: `-=${ellipse_a * Math.sin(angle)}`,
+                y: `-=${ellipse_b * Math.cos(angle)}`,
+                repeat: 0,
+                ease: "none",
+              });
+            //floating
+            var tl = gsap.timeline({repeat: -1, delay: 1})
+            tl.to(selector, {
+                duration:  0.8 + Math.random()*0.4,
+                y: `-=25`,
+                ease: Sine.easeInOut
+              })
+              .to(selector, {
+                duration: 0.8 + Math.random()*0.4,
+                y: `+=25`,
+                ease: Sine.easeInOut
+              })
+          });
+        }
+      }
+
+      handleMediaQueryChange(mediaQuery);
+      mediaQuery.addEventListener("change", handleMediaQueryChange);
+      
+      
     })
   </script>
 </body>

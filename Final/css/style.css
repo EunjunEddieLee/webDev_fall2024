@@ -300,3 +300,13 @@ main {
   /* position: absolute; */
   background: #f6d110;
 }
+
+/* Anything smaller than a ipad classic = mobile phone size */
+@media only screen and (max-width: 768px) {
+  .bouncy-text .char {
+    margin: 0 4px;
+    font-size: 90px;
+    color: rgba(0, 0, 0, 0.5);
+    /* transition: transform 0.3s ease-in-out; */
+  }
+}

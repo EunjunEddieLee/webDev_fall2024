@@ -79,8 +79,6 @@
       position: relative;
       width: 60vw;
       height: 70vh;
-      max-width: 60vw;
-      max-height: 70vh;
       border-radius: 50px;
       padding: 50px;
       background-color: #f3e9dc;
@@ -122,6 +120,46 @@
       cursor: url('./img/playroom/cursor_click_50px.png') 2 2, auto !important;
     }
 
+    .scratcherplace {
+      position: absolute;
+      width: 330px;
+      height: 350px;
+    }
+    .scratcher {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 330px;
+      height: 220px;
+      background-image: url('./img/playroom/scratcher.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .catclaw {
+      position: absolute;
+      top: 50px;
+      left: 80px;
+      width: 165px;
+      height: 200px;
+      background-image: url('./img/playroom/catclaw.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .catclaw:hover {
+      cursor: url('./img/playroom/cursor_normal_50px.png') 2 2, auto !important;
+    }
+    .catclaw:active {
+      cursor: url('./img/playroom/cursor_click_50px.png') 2 2, auto !important;
+    }
+
+    /* Anything smaller than a ipad classic = mobile phone size */
+    @media only screen and (max-width: 768px) {
+      .container {
+        width: 80vw;
+        height: 80vh;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -129,11 +167,15 @@
     <a href="./index.html"><img src="./img/playroom/arrow.png" alt="back_to_home"/></a>
   </div>
   
-  <div class="title"><h1 style="font-family: Rubik Doodle Shadow; color: #f3e9dc; font-size: 50px; margin-bottom: 20px;">Play Room</h1></div>
+  <div class="title"><h1 style="font-family: Rubik Doodle Shadow; color: #f3e9dc; font-size: 50px; margin-bottom: 20px;">Play Room !!</h1></div>
 
   <div class="container">
     <div class="pinwheel"></div>
     <div class="ball"></div>
+    <div class="scratcherplace">
+      <div class="scratcher"></div>
+      <div class="catclaw"></div>
+    </div>
   </div>
 
 
@@ -144,6 +186,9 @@
 
       const pinwheel = document.getElementsByClassName('pinwheel')[0]
       const ball = document.getElementsByClassName('ball')[0]
+      const scratcherplace = document.getElementsByClassName('scratcherplace')[0]
+      const scratcher = document.getElementsByClassName('scratcher')[0]
+      const catclaw = document.getElementsByClassName('catclaw')[0]
       gsap.to(pinwheel, {
         duration: 1,
         x: (Math.random()*2 - 1)*innerWidth*0.2,
@@ -155,6 +200,11 @@
         x: (Math.random()*2 - 1)*innerWidth*0.2,
         y: (Math.random()*2 - 1)*innerHeight*0.3,
         rotation: Math.random() >= 0.5 ? 360 : -360
+      })
+      gsap.to(scratcherplace, {
+        duration: 1,
+        x: Math.random()>=0.5 ? innerWidth*0.2 : -innerWidth*0.2,
+        y: Math.random()>=0.5 ? innerHeight*0.1 : -innerHeight*0.1,
       })
 
       gsap.registerPlugin(Draggable);
@@ -172,6 +222,12 @@
         allowEventDefault: true
       });
       
+      Draggable.create(".catclaw", {
+        // type: "y",
+        bounds: ".scratcherplace",
+        inertia: true,
+        allowEventDefault: true
+      })
     })
   </script>
 </body>

@@ -17,6 +17,7 @@
 
     * {
       font-family: 'Delius', sans-serif;
+      box-sizing: border-box;
     }
 
     header * {
@@ -100,7 +101,12 @@
 
     html {
       height: 100vh;
-      background-color: #bff7e9;
+      background-image: url('./img/meme/meme-background.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #23176699;
+      background-blend-mode: darken;
     }
 
     main {
@@ -121,13 +127,76 @@
     }
 
     .meme {
-      height: auto;
-      margin: 50px 40px;
+      width: 260px;
+      height: 260px;
+      margin: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    .gif-container {
+      position: relative;
+      width: auto;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .gif-container img {
+      position: absolute;
+      /* top: 0; */
+      opacity: 1;
+    }
+    .gif-container img.gif {
+      opacity: 0; 
+    }
+    .gif-container:hover img.static {
+      opacity: 0;
+    }
+    .gif-container:hover img.gif {
+      opacity: 1;
+    }
+
     .meme img {
-      max-height: 300px;
+      height: 100%;
       width: auto;
       border-radius: 30px;
+      opacity: .7;
+      filter: grayscale(.7);
+      transition-duration: .3s;
+    }
+    .meme:hover img {
+      opacity: 1;
+      scale: 1.2;
+      filter: grayscale(0);
+    }
+
+    /* Anything smaller than a ipad classic = mobile phone size */
+    @media only screen and (max-width: 768px) {
+      
+      .top-nav > a {
+        display: none;
+      }
+      .top-nav ul {
+        margin: 0;
+        width: 100%;
+      }
+      .top-nav ul li {
+        width: 25%;
+      }
+
+      .container {
+        width: 80vw;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .meme {
+        width: 100%;
+        height: 300px;
+        margin: 30px 0;
+      }
     }
 
   </style>
@@ -152,25 +221,61 @@
         <img src="./img/meme/orange_loaf.jpg"/>
       </div>
       <div class="meme">
-        <img src="./img/meme/oiiaoiia.gif"/>
+        <div class="gif-container">
+          <img src="./img/meme/oiiaoiia.gif" class="gif"/>
+          <img src="./img/meme/oiiaoiia-static.png" class="static"/>
+        </div>
       </div>
       <div class="meme">
-        <img src="./img/meme/nyancat.gif"/>
+        <div class="gif-container">
+          <img src="./img/meme/nyancat.gif" class="gif"/>
+          <img src="./img/meme/nyancat-static.png" class="static"/>
+        </div>
       </div>
       <div class="meme">
-        <img src="./img/meme/happy_cat.gif"/>
+        <div class="gif-container">
+          <img src="./img/meme/happy_cat.gif" class="gif"/>
+          <img src="./img/meme/happy_cat-static.png" class="static"/>
+        </div>
       </div>
       <div class="meme">
         <img src="./img/meme/shocked_cat.jpg"/>
       </div>
       <div class="meme">
-        <img src="./img/meme/popcat.gif"/>
+        <div class="gif-container">
+          <img src="./img/meme/popcat.gif" class="gif"/>
+          <img src="./img/meme/popcat-static.png" class="static"/>
+        </div>
       </div>
       <div class="meme">
-        <img src="./img/meme/bananacat.gif"/>
+        <div class="gif-container">
+          <img src="./img/meme/bananacat.gif" class="gif"/>
+          <img src="./img/meme/bananacat-static.png" class="static"/>
+        </div>
       </div>
       <div class="meme">
-        <img src="./img/meme/huh.gif"/>
+        <div class="gif-container">
+          <img src="./img/meme/huh.gif" class="gif"/>
+          <img src="./img/meme/huh-static.png" class="static"/>
+        </div>
+      </div>
+      <div class="meme">
+        <img src="./img/meme/car.jpg"/>
+      </div>
+      <div class="meme">
+        <div class="gif-container">
+          <img src="./img/meme/(-_-).gif" class="gif"/>
+          <img src="./img/meme/(-_-)-static.png" class="static"/>
+        </div>
+      </div>
+      <div class="meme">
+        <img src="./img/meme/crying.jpg"/>
+      </div>
+      <div class="meme">
+        <img src="./img/meme/tired.jpg"/>
+      </div>
+      <div class="meme">
+        <img src="./img/meme/surprised.jpg"/>
       </div>
     </div>
   </main>
